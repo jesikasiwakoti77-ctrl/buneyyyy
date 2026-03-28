@@ -78,3 +78,15 @@ body, html {
 }
 .close-btn:hover { background: var(--hot-pink); color: white; }
 .hidden { display: none; }
+/* Styling for buttons she has already opened in the past */
+.day-btn:not(.locked) {
+    background: rgba(255, 183, 197, 0.1);
+    border-color: var(--soft-pink);
+    opacity: 1;
+}
+
+/* Specific styling for the CURRENT day button to make it stand out */
+.day-btn:not(.locked)[style*="box-shadow"] {
+    background: rgba(255, 0, 127, 0.2);
+    transform: scale(1.1);
+}
