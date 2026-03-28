@@ -1,5 +1,5 @@
 // 1. SET THE BIRTHDAY DATE (Friday at Midnight)
-const TARGET_DATE = new Date("March 28, 2025 00:00:00").getTime(); 
+const TARGET_DATE = new Date("April,03 2026 00:00:00").getTime(); 
 
 const messages = [
     "It’s been 6 years since we first met. You were just 12, and I’ve watched you grow into the most incredible person. Today starts your final week of being a kid. Let’s make it count.", // Sunday
