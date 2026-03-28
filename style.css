@@ -1,0 +1,80 @@
+:root {
+    --pink-mesh: #ff9a9e;
+    --soft-rose: #fad0c4;
+    --hot-pink: #f72585;
+}
+
+body, html {
+    margin: 0; padding: 0; height: 100%;
+    background: #000; color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Animated Mesh Gradient Background */
+.mesh-gradient {
+    position: fixed; width: 100vw; height: 100vh;
+    background: radial-gradient(circle at 50% 50%, #ff007f 0%, transparent 50%),
+                radial-gradient(circle at 0% 0%, #7209b7 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, #4cc9f0 0%, transparent 50%);
+    filter: blur(80px);
+    opacity: 0.5;
+    z-index: -1;
+    animation: meshMove 10s infinite alternate;
+}
+
+@keyframes meshMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.2) rotate(5deg); }
+}
+
+.container {
+    height: 100vh; display: flex; flex-direction: column;
+    justify-content: space-around; align-items: center;
+}
+
+.subtitle { letter-spacing: 4px; font-size: 0.7rem; opacity: 0.8; }
+
+#timer {
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem; color: var(--soft-rose);
+    text-shadow: 0 0 30px var(--hot-pink);
+}
+
+.glass-sphere {
+    width: 180px; height: 180px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 5rem; font-family: 'Playfair Display', serif;
+    box-shadow: 0 0 50px rgba(247, 37, 133, 0.3);
+}
+
+.days-nav { display: flex; gap: 15px; }
+
+.day-btn {
+    width: 50px; height: 50px;
+    border-radius: 50%; border: 1px solid white;
+    display: flex; justify-content: center; align-items: center;
+    cursor: pointer; transition: 0.3s;
+}
+
+.day-btn.locked { opacity: 0.2; cursor: not-allowed; }
+.day-btn:not(.locked):hover { background: var(--hot-pink); box-shadow: 0 0 20px var(--hot-pink); }
+
+.modal {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center; z-index: 100;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(30px);
+    padding: 50px; border-radius: 40px; border: 1px solid rgba(255,255,255,0.2);
+    text-align: center; max-width: 400px;
+}
+
+#modalText { line-height: 1.8; font-weight: 200; }
+.hidden { display: none; }
